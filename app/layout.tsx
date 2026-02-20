@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Sorts_Mill_Goudy } from "next/font/google";
 import "./globals.css";
 import LenisScroll from "@/components/lenis";
+import RocketTrail from "@/components/RocketTrail";
 
 const poppins = Poppins({
     variable: "--font-sans",
@@ -16,8 +17,13 @@ const sortsMillGoudy = Sorts_Mill_Goudy({
 });
 
 export const metadata: Metadata = {
-    title: "Ryan Walker Portfolio - PrebuiltUI",
-    description: "Ryan Walker's portfolio built by PrebuiltUI. A free and open-source UI template for React.js, Next.js and Tailwind CSS.",
+    title: "Le Quoc Viet - Profile",
+    description: "Aspiring full-stack web developer building practical, user-focused web projects while continuously learning and improving.",
+    icons: {
+        icon: "/favicon.ico",
+        shortcut: "/favicon.ico",
+        apple: "/favicon.ico",
+    },
 };
 
 export default function RootLayout({
@@ -27,7 +33,8 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
+            <body className="bg-neutral-950 text-white">
+                <RocketTrail />
                 <LenisScroll />
                 {children}
             </body>

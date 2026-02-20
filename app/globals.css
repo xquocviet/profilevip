@@ -2,7 +2,7 @@
 
 @theme {
     --font-sans: "Poppins", sans-serif;
-    --font-mono: "Sorts Mill Goudy", monospace;
+    --font-mono: "JetBrains Mono", monospace;
 }
 
 @layer base {
@@ -14,3 +14,46 @@
         @apply cursor-pointer;
     }
 }
+@keyframes gridMove {
+    0% {
+      background-position: 0 0, 0 0;
+    }
+    100% {
+      background-position: 100px 100px, 100px 100px;
+    }
+  }
+  @keyframes gridMove {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(40px);
+    }
+  }
+  
+  .animate-gridMove {
+    animation: gridMove 10s linear infinite;
+  }
+  ::selection {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+  
+  ::-moz-selection {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.15s ease-out;
+  }

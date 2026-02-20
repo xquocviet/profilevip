@@ -1,16 +1,29 @@
 import Section from "@/components/section";
+import Reveal from "@/components/Reveal";
 
 export default function AboutSection() {
-    return (
-        <Section title="About">
-            <div className="text-sm/6.5">
-                <p>
-                    I’m Rayan Walker, a full-stack developer passionate about building end-to-end digital experiences that are fast, scalable and user-focused. With strong expertise in both front-end and back-end technologies, I enjoy transforming ideas into fully functional web applications that feel seamless and intuitive.
-                </p>
-                <p className="mt-5">
-                    Whether it’s crafting responsive interfaces or developing robust backend systems, I aim to deliver solutions that are both reliable and impactful.
-                </p>
-            </div>
-        </Section>
-    );
+  return (
+    <Reveal>
+    <Section title="About">
+      <div className="max-w-3xl text-sm leading-relaxed text-gray-400 space-y-6">
+        <p>
+          My name is Le Quoc Viet, also known as Lee Wuoc Ziet. I’m a developer
+          who enjoys learning, experimenting, and turning ideas into real
+          products.
+        </p>
+
+        <p>
+          I’m currently exploring both front-end and back-end development,
+          focusing on building clean, smooth, and user-friendly web
+          applications.
+        </p>
+
+        <p>
+          My goal is to create digital experiences that are simple, reliable,
+          and thoughtfully crafted.
+        </p>
+      </div>
+    </Section>
+    </Reveal>
+  );
 }

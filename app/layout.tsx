@@ -3,6 +3,7 @@ import { Poppins, Sorts_Mill_Goudy } from "next/font/google";
 import "./globals.css";
 import LenisScroll from "@/components/lenis";
 import RocketTrail from "@/components/RocketTrail";
+import RainBackground from "@/components/RainBackground";
 
 const poppins = Poppins({
     variable: "--font-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className="bg-neutral-950 text-white">
+                <RainBackground />
                 <RocketTrail />
                 <LenisScroll />
                 {children}

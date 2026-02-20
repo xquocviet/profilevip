@@ -1,59 +1,94 @@
 @import "tailwindcss";
 
 @theme {
-    --font-sans: "Poppins", sans-serif;
-    --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 @layer base {
-    body {
-        @apply bg-white text-gray-800 antialiased text-sm;
-    }
+  body {
+    @apply text-gray-800 antialiased text-sm;
+    background-color: #000; 
+    background-image: url("/assets/bg.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 
-    button {
-        @apply cursor-pointer;
-    }
+  button {
+    @apply cursor-pointer;
+  }
 }
-@keyframes gridMove {
-    0% {
-      background-position: 0 0, 0 0;
-    }
-    100% {
-      background-position: 100px 100px, 100px 100px;
-    }
+
+@keyframes gridMoveBackground {
+  0% {
+    background-position: 0 0, 0 0;
   }
-  @keyframes gridMove {
-    0% {
-      transform: translateY(0px);
-    }
-    100% {
-      transform: translateY(40px);
-    }
+  100% {
+    background-position: 100px 100px, 100px 100px;
   }
-  
-  .animate-gridMove {
-    animation: gridMove 10s linear infinite;
+}
+
+@keyframes gridMoveFloat {
+  0% {
+    transform: translateY(0px);
   }
-  ::selection {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
+  100% {
+    transform: translateY(40px);
   }
-  
-  ::-moz-selection {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
+}
+
+.animate-gridMove {
+  animation: gridMoveFloat 10s linear infinite;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgb(199, 199, 199);
+}
+
+::-moz-selection {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgb(199, 199, 199);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .animate-fadeIn {
-    animation: fadeIn 0.15s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.15s ease-out;
+}
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
   }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 60s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 60s linear infinite;
+}

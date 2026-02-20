@@ -1,50 +1,78 @@
 "use client";
 
-import Section from "@/components/section";
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 
 type Skill = {
   name: string;
+  logo: string;
 };
 
 export default function SkillsSection() {
   const skills: Skill[] = [
-    { name: "React.js" },
-    { name: "Next.js" },
-    { name: "Tailwind CSS" },
-    { name: "TypeScript" },
-    { name: "Node.js" },
-    { name: "PostgreSQL" },
-    { name: "MySQL" },
-    { name: "Git" },
-    { name: "HTML" },
-    { name: "CSS" },
-    { name: "JavaScript" },
+    // Frontend
+    { name: "HTML", logo: "/logos/html.svg" },
+    { name: "CSS", logo: "/logos/css3.svg" },
+    { name: "JavaScript", logo: "/logos/javascript.svg" },
+    { name: "React", logo: "/logos/react.webp" },
+    { name: "Next.js", logo: "/logos/nextjs.webp" },
+    { name: "Tailwind", logo: "/logos/tailwind.png" },
+  
+    // Backend
+    { name: "Node.js", logo: "/logos/nodejs.svg" },
+    { name: "Python", logo: "/logos/python.svg" },
+    { name: "Java", logo: "/logos/java.svg" },
+    { name: "C++", logo: "/logos/c.svg" },
+  
+    // Database
+    { name: "MySQL", logo: "/logos/mysql.svg" },
+   // { name: "PhpMyAdmin", logo: "/logos/phpmyadmin.svg" },
+  
+    // Tools
+    { name: "Git", logo: "/logos/git.png" },
   ];
+
+  const midpoint = Math.ceil(skills.length / 2);
+  const skillsTop = skills.slice(0, midpoint);
+  const skillsBottom = skills.slice(midpoint);
 
   return (
     <Reveal>
-    <Section title="Skills">
-      <div className="flex flex-wrap justify-center items-center gap-4 mr-auto">
-        {skills.map((skill) => (
-          <SkillCard key={skill.name} skill={skill} />
-        ))}
-      </div>
-    </Section>
+      <section className="relative py-20 px-6 flex justify-center">
+        <div className="relative w-full max-w-6xl space-y-14">
+          
+          <div className="relative overflow-hidden">
+            <div className="flex w-max animate-marquee-left gap-24">
+              {[...skillsTop, ...skillsTop].map((skill, index) => (
+                <LogoItem key={index} skill={skill} />
+              ))}
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden">
+            <div className="flex w-max animate-marquee-right gap-24">
+              {[...skillsBottom, ...skillsBottom].map((skill, index) => (
+                <LogoItem key={index} skill={skill} />
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
     </Reveal>
   );
 }
 
-function SkillCard({ skill }: { skill: Skill }) {
+function LogoItem({ skill }: { skill: Skill }) {
   return (
-    <div className="group relative">
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-pink-500/30 blur opacity-0 group-hover:opacity-100 transition duration-500" />
-
-      <div className="relative z-10 rounded-xl border border-white/10 bg-neutral-900/70 backdrop-blur-lg px-4 py-3 text-center transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:border-white/20">
-        <p className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors duration-300">
-          {skill.name}
-        </p>
-      </div>
+    <div className="flex items-center justify-center w-32 h-32 opacity-70 hover:opacity-100 transition duration-500">
+      <Image
+        src={skill.logo}
+        alt={skill.name}
+        width={80}
+        height={80}
+        className="object-contain grayscale hover:grayscale-0 transition duration-500"
+      />
     </div>
   );
 }

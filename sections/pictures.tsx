@@ -16,7 +16,7 @@ export default function ProjectsSection() {
   const projects: Project[] = [
     {
       title: "MESSI IS GOAT",
-      description: "Messi officially becomes GOAT",
+      description: "Messi officially becomes the GOAT, redefining football history.",
       image: "/assets/hinh-nen-messi.png",
       link: "https://bongdaplus.vn/bong-da-the-gioi/messi-chinh-thuc-tro-thanh-goat-4462502410.html",
     },

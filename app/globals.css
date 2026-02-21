@@ -7,13 +7,18 @@
 
 @layer base {
   body {
-    @apply text-gray-800 antialiased text-sm;
-    background-color: #000; 
+    @apply text-gray-200 antialiased text-sm;
+    background-color: #000;
     background-image: url("/assets/bg.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      background-attachment: fixed;
+    }
   }
 
   button {
@@ -86,9 +91,23 @@
 }
 
 .animate-marquee-left {
-  animation: marquee-left 60s linear infinite;
+  animation: marquee-left 35s linear infinite;
 }
 
 .animate-marquee-right {
-  animation: marquee-right 60s linear infinite;
+  animation: marquee-right 35s linear infinite;
+}
+
+@media (min-width: 1024px) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation-duration: 60s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
 }

@@ -23,18 +23,20 @@ export default function HeroSection() {
 
       <div className="relative flex items-center justify-center">
         <div className="relative w-[170px] h-[170px]">
-          <Image
-            src="/assets/wuocziet.jpg"
-            alt="Profile Image"
-            fill
-            className="object-cover rounded-full"
-            style={{
-              WebkitMaskImage:
-                "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
-              maskImage:
-                "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
-            }}
-          />
+        <Image
+  src="/assets/wuocziet.jpg"
+  alt="Profile Image"
+  fill
+  placeholder="blur"
+  blurDataURL="/assets/default.png"
+  className="object-cover rounded-full"
+  style={{
+    WebkitMaskImage:
+      "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+    maskImage:
+      "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+  }}
+/>
         </div>
 
         <Image

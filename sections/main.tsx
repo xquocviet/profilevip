@@ -24,7 +24,7 @@ export default function HeroSection() {
       <div className="relative flex items-center justify-center">
         <div className="relative w-[170px] h-[170px]">
         <Image
-  src="/assets/wuocziet.jpg"
+  src="/assets/cs14.jpg"
   alt="Profile Image"
   fill
   placeholder="blur"
@@ -75,7 +75,7 @@ export default function HeroSection() {
   <ArrowDownIcon className="ml-2 size-5" />
 </a>
         <a
-          href="https://t.me/WZiet"
+          href="https://t.me/xVietz"
           target="_blank"
           rel="noopener noreferrer"
           className="ml-4 flex items-center gap-3 px-6 py-2.5 rounded-xl
